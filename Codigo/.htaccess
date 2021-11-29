@@ -1,0 +1,16 @@
+order allow,deny
+allow from 161.18.196.81
+allow from 179.32.124.163
+allow from 181.33.238.93
+allow from 201.230.187.87
+allow from 181.235.45.213
+allow from 191.98.168.125
+allow from 179.32.184.30
+deny from all
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php?url=$1&id=$2 [L, QSA]
