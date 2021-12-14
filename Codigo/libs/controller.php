@@ -9,13 +9,10 @@
       * summary
       */
      public function __construct()
-     {
-        $this->view=new View();
+     { 
+        $this->view= new View();
         if (isset($_POST)) {
             $this->data=$_POST;
-        }
-        if (isset($_GET["data"])) {
-            $this->dataGet=$_GET;
         }
         if (isset($_FILES)) {
             $this->files=$_FILES;            

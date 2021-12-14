@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 class Login extends Controller
 {
@@ -16,9 +16,30 @@ class Login extends Controller
     }
      public  function __construct1($x){
             parent::__construct();
- 
     }
-    public function validarUsuario(){
+    public  function __construct0(){
+        parent::__construct();
+        $this->view->render("/login/login");
+        
+     }
+
+     public  function __construct1($url){
+        parent::__construct();
+        $sub=$url[0]."/".$url[1]."/".$url[1];
+       if($this->view->subValid($sub)==1){
+        if (!isset($url[2])) {
+            $this->view->render($sub);      
+        }else{
+            $this->loadModel($url[0]."Model");
+            $this->{$url[1]}();
+        }
+       }else{
+            $this->loadModel($url[0]."Model");
+            $this->{$url[1]}();
+       }
+     }
+
+    public function validar(){
       $arreglo=json_decode($this->data["data"]);
       if ($arreglo->email=="" or $arreglo->pass=="") {
          echo json_encode(array("estado" => 0));
@@ -26,6 +47,7 @@ class Login extends Controller
         echo $this->model->valida($arreglo->email,$arreglo->pass);
       }
     }
+
     public function cerrarSesion(){
         session_start();
         session_destroy();

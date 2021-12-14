@@ -1,4 +1,4 @@
-<?
+<?php
 
 class Fail extends Controller{
     /**
@@ -10,6 +10,5 @@ class Fail extends Controller{
     }
 
 }
-
 
  ?>

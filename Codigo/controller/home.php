@@ -1,4 +1,4 @@
-<? 
+<?php
 
 class Home extends Controller
 {
@@ -16,17 +16,8 @@ class Home extends Controller
     }
     public  function __construct0(){
         parent::__construct();
-        $this->view->render("/index/index");
-        
+        $this->view->render("/home/home");
      }
-     public  function __construct1($x){
-        parent::__construct();
-        
-     }
-
-    public function extraerProductos(){
-        echo $this->model->productosRand();
-    }
 
 }
 
