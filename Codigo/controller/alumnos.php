@@ -1,5 +1,5 @@
 <?php
-class Alumno extends Controller
+class Alumnos extends Controller
 {
     /**
      * este es el controlador par los productos de inicio y el contenido plano
@@ -14,25 +14,37 @@ class Alumno extends Controller
         }
     }
     public  function __construct0(){
-        parent::__construct();
-        $this->view->render("alumno/alumno");
+        session_start();
+        if (isset($_SESSION['alumno'])) {
+            parent::__construct();
+            $this->view->render("alumno/alumno");    
+        }else{
+            header("Location: /");
+        }
      }
      
      public  function __construct1($url){
-        parent::__construct();
-        $sub=$url[0]."/".$url[1]."/".$url[1];
-       if($this->view->subValid($sub)==1){
-        if (!isset($url[2])) {
-            $this->view->render($sub);      
+        session_start();
+        if (isset($_SESSION['alumno'])) {
+            parent::__construct();
+            $sub=$url[0]."/".$url[1]."/".$url[1];
+           if($this->view->subValid($sub)==1){
+            if (!isset($url[2])) {
+                $this->view->render($sub);      
+            }else{
+                $this->loadModel($url[0]."Model");
+                $this->{$url[1]}();
+            }
+           }else{
+                $this->loadModel($url[0]."Model");
+                $this->{$url[1]}();
+           }    
         }else{
-            $this->loadModel($url[0]."Model");
-            $this->{$url[1]}();
+            header("Location: /");
         }
-       }else{
-            $this->loadModel($url[0]."Model");
-            $this->{$url[1]}();
-       }
+        
      }
+
 
 
 }

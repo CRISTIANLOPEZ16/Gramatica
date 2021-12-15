@@ -18,18 +18,33 @@ class Persona
         }
     }
 
-	public function __construct5($nombre,$apellido,$correo,$clave,$tipo_persona)
+    public function __construct4($id,$nombre,$apellido,$correo)
     { 
+        $this->setNombre($nombre);
+        $this->setApellido($apellido);
+        $this->setCorreo($correo);
+        $this->setId($id);
+    }
+
+
+	public function __construct5($id,$nombre,$apellido,$correo,$clave)
+    { 
+        $this->setNombre($nombre);
+        $this->setApellido($apellido);
+        $this->setCorreo($correo);
+        $this->setClave($clave);
+        $this->setId($id);
+    }
+
+    public function __construct6($id,$nombre,$apellido,$correo,$clave,$tipo_persona)
+    { 
+    	$this->setId($id);
         $this->setNombre($nombre);
         $this->setApellido($apellido);
         $this->setCorreo($correo);
         $this->setClave($clave);
         $this->setTipo_persona($tipo_persona);
     }
-
-	
-
-
 
 	public function setId($id){
 		$this->id = $id;

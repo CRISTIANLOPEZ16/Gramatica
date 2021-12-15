@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-class Docentes extends Controller
+class Profesores extends Controller
 {
     /**
      * este es el controlador par los productos de inicio y el contenido plano
@@ -17,23 +17,36 @@ class Docentes extends Controller
         }
     }
     public  function __construct0(){
-        parent::__construct();
-        $this->view->render("docentes/docentes");
-     }
-     public  function __construct1($url){
-        parent::__construct();
-        $sub=$url[0]."/".$url[1]."/".$url[1];
-       if($this->view->subValid($sub)==1){
-            $this->view->render($sub);      
-       }else{
-            $this->loadModel($url[0]."Model");
-            $this->{$url[1]}();
-       }
+        session_start();
+        if (isset($_SESSION['profesor'])) {
+            parent::__construct();
+            $this->view->render("profesor/profesor");
+        }else{
+            header("Location: /");
+        }
      }
 
-     public function agregarAlumnos(){
-        echo "agregando Alumnos 1";
+     public  function __construct1($url){
+        session_start();
+        if (isset($_SESSION['profesor'])) {
+            parent::__construct();
+            $sub=$url[0]."/".$url[1]."/".$url[1];
+           if($this->view->subValid($sub)==1){
+            if (!isset($url[2])) {
+                $this->view->render($sub);      
+            }else{
+                $this->loadModel($url[0]."Model");
+                $this->{$url[1]}();
+            }
+           }else{
+                $this->loadModel($url[0]."Model");
+                $this->{$url[1]}();
+           }    
+        }else{
+            header("Location: /");
+        }
      }
+
 
 }
 

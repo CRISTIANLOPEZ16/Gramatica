@@ -21,6 +21,12 @@ class Alumno extends Persona
         $this->setInstitucion($institucion);
         parent::__construct($nombre,$apellido,$correo,$clave,$tipo_persona);
     }
+    public function __construct8($id,$nombre,$apellido,$correo,$clave,$tipo_persona,$codigo,$institucion)
+    { 
+        $this->setCodigo($codigo);
+        $this->setInstitucion($institucion);
+        parent::__construct($id,$nombre,$apellido,$correo,$clave,$tipo_persona);
+    }
 
 	public function setCodigo($codigo){
 		$this->codigo = $codigo;

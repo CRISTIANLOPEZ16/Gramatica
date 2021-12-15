@@ -15,11 +15,18 @@ class Profesor extends Persona
         }
     }
 
-    public function __construct7($nombre,$apellido,$correo,$clave,$tipo_persona,$codigo,$institucion)
+    public function __construct7($id,$nombre,$apellido,$correo,$clave,$codigo,$institucion)
     { 
         $this->setCodigo($codigo);
         $this->setInstitucion($institucion);
-        parent::__construct($nombre,$apellido,$correo,$clave,$tipo_persona);
+        parent::__construct($id,$nombre,$apellido,$correo,$clave);
+    }
+
+   	public function __construct8($id,$nombre,$apellido,$correo,$clave,$tipo_persona,$codigo,$institucion)
+    { 
+        $this->setCodigo($codigo);
+        $this->setInstitucion($institucion);
+        parent::__construct($id,$nombre,$apellido,$correo,$clave,$tipo_persona);
     }
 
 	public function setCodigo($codigo){

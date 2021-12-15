@@ -1,5 +1,7 @@
 <?php 
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 class Login extends Controller
 {
     /**
@@ -14,12 +16,9 @@ class Login extends Controller
             call_user_func_array(array($this,$funcion_constructor),$params);
         }
     }
-     public  function __construct1($x){
-            parent::__construct();
-    }
     public  function __construct0(){
         parent::__construct();
-        $this->view->render("/login/login");
+        $this->view->render("login/login");
         
      }
 
@@ -41,10 +40,10 @@ class Login extends Controller
 
     public function validar(){
       $arreglo=json_decode($this->data["data"]);
-      if ($arreglo->email=="" or $arreglo->pass=="") {
+      if ($arreglo->correo=="" or $arreglo->clave=="") {
          echo json_encode(array("estado" => 0));
       }else{
-        echo $this->model->valida($arreglo->email,$arreglo->pass);
+        echo $this->model->valida($arreglo->correo,$arreglo->clave);
       }
     }
 

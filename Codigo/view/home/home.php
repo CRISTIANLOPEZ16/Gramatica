@@ -27,7 +27,7 @@
             <main class="container">
                 <div class="row nosotros justify-content-center">
                     <div class="col-12 text-center">
-                        <h2 class="subtitulo"><span>Texto</span></h2>
+                        <h2 class="subtitulo"><span>Definición</span></h2>
                         <h3 class="titulo">¿Que es?</h3>
                         <p>Gramática transformacional es una expresión que designa al tipo de gramática generativa que utiliza reglas transformacionales u otros mecanismos para representar el desplazamiento de constituyentes y otros fenómenos del lenguaje natural</p>
                     </div>
@@ -63,7 +63,7 @@
                         <div class="row justify-content-center">
                             <article class="col-6 col-lg-3 py-1">
                                 <figure class="persona">
-                                    <img src="/components/img/perfil.png" class="img-fluid">
+                                    <img src="<?php echo constant('URLIMG');?>perfil.png" class="img-fluid">
                                     <figcaption class="overlay">
                                         <p class="overlay-texto">Cristian Lopez</p>
                                     </figcaption>
