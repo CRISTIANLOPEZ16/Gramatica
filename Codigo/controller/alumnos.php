@@ -1,4 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once("model/clase/Alumno.php");
 class Alumnos extends Controller
 {
     /**
@@ -17,7 +22,7 @@ class Alumnos extends Controller
         session_start();
         if (isset($_SESSION['alumno'])) {
             parent::__construct();
-            $this->view->render("alumno/alumno");    
+            $this->view->render("alumnos/alumnos");    
         }else{
             header("Location: /");
         }
@@ -28,6 +33,7 @@ class Alumnos extends Controller
         if (isset($_SESSION['alumno'])) {
             parent::__construct();
             $sub=$url[0]."/".$url[1]."/".$url[1];
+
            if($this->view->subValid($sub)==1){
             if (!isset($url[2])) {
                 $this->view->render($sub);      
@@ -45,6 +51,12 @@ class Alumnos extends Controller
         
      }
 
+    public function listarEjercicios(){
+        echo $this->model->listarEjercicios();
+    }
+     public function listarQuices(){
+        echo $this->model->listarQuices();
+    }
 
 
 }

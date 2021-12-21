@@ -11,7 +11,8 @@
         <script src="https://kit.fontawesome.com/a9633e48d1.js" crossorigin="anonymous"></script>
         <title>Pagina Principal</title>
         <link rel="shortcut icon" href="<?php echo constant('URLIMG');?>logoApiDos.png">
-        <link rel="stylesheet" href="<?php echo constant('URLCSS');?>admin.css?1">
+        <link rel="stylesheet" href="<?php echo constant('URLCSS');?>profesores.css?1">
+        <link rel="stylesheet" href="<?php echo constant('URLCSS');?>agregarProfesor.css?1">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
@@ -20,14 +21,30 @@
                     <div class="menu">
                         <img href="<?php echo constant('URLCSS');?>admin.css?1" class="logotipo">
                         <nav>
-                            <a href="">Ejercicios</a>
-                            <a href="/indexDocente/quices/index.html">Quices</a>
-                            <a href="">Crear clase</a>
-                            <a href="#"><i class="fas fa-sign-out-alt"></i></a>
+                            <a href="ejercicios/">Ejercicios</a>
+                            <a href="quices">Quices</a>
+                            <a href="clases">Crear clase</a>
+                            <a id="cerrar"><i class="fas fa-sign-out-alt"></i></a>
                         </nav>
                     </div>
                 </div>
             </header>
+        <div id="cuerpo">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center">Lista de Cursos</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                              <label for="cursos">Elegir un curso:</label>
+                              <select name="curso" id="cuerpoCurso">
+                                  
+                              </select>
+                              <br><br>
+                              <input type="submit" value="Cargar Alumnos" onclick="infoAlumnos()">
+                    </div>
+                </div>
+            </div><br>
             <div class="container">
                 <div class="row">
                     <h2 class="text-center">Lista de estudiantes</h2>
@@ -51,9 +68,11 @@
                 </div>
             </div><br>
             <div class="boton">
-                <input type="submit" value="Agregar">
+                <input onclick="window.location.href='/profesores/agregar'" type="submit" value="Agregar">
             </div>
+</div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script language="JavaScript" src="<?php echo constant('URLJS');?>admin.js?1" type="text/javascript"></script>
+        <script language="JavaScript" src="<?php echo constant('URLJS');?>profesor.js?1" type="text/javascript"></script>
+        <script language="JavaScript" src="<?php echo constant('URLJS');?>papaparse.min.js" type="text/javascript"></script>
     </body>
 </html>

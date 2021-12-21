@@ -2,15 +2,16 @@
 
 class Ejercicio
 {
-	public $id;
-	public $titulo;
-	public $descripcion;
-	public $fecha_inicio;
-	public $fecha_fin;
-	public $sin_fecha;
-	public $autor;
-	public $tipo_ejercicio;
-	public $estado;
+	public $id="";
+	public $titulo="";
+	public $descripcion="";
+	public $fecha_inicio="";
+	public $fecha_fin="";
+	public $sin_fecha="";
+	public $autor="";
+	public $tipo_ejercicio="";
+	public $estado="";
+    public $id_curso="";
 
 
 	public function __construct(){
@@ -32,6 +33,19 @@ class Ejercicio
         $this->setAutor($autor);
         $this->setTipoEjercicio($tipo_ejercicio);
         $this->setEstado($estado);
+    }
+
+    public function __construct9($id,$titulo,$descripcion,$fecha_inicio,$fecha_fin,$sin_fecha,$autor,$tipo_ejercicio,$id_curso)
+    {
+        $this->setId($id);
+        $this->setTitulo($titulo);
+        $this->setDescripcion($descripcion);
+        $this->setFechaInicio($fecha_inicio);
+        $this->setFechaFin($fecha_fin);
+        $this->setSinFecha($sin_fecha);
+        $this->setAutor($autor);
+        $this->setTipoEjercicio($tipo_ejercicio);
+        $this->setIdCurso($id_curso);
     }
 
     /**
@@ -210,6 +224,26 @@ class Ejercicio
     public function setEstado($estado)
     {
         $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCurso()
+    {
+        return $this->id_curso;
+    }
+
+    /**
+     * @param mixed $id_curso
+     *
+     * @return self
+     */
+    public function setIdCurso($id_curso)
+    {
+        $this->id_curso = $id_curso;
 
         return $this;
     }

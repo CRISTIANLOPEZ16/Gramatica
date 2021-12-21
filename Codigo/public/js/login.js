@@ -10,24 +10,29 @@ $(document).on("click", "#submit-login", function(e) {
        if (login.estado==1) {
         $("#submit-login").val("Bienvenido Administrador");
         setTimeout(function(){
-            $("#submit-login").val("Entrar");
-            window.location="https://noanlearning.space/admin/";
+            $("#submit-login").html("Entrar");
+            window.location="https://noanlearning.space/administrador/";
         },2000);
        }else if(login.estado==2){
         $("#submit-login").val("Bienvenido Profesor");
         setTimeout(function(){
-            $("#submit-login").val("Entrar");
-            window.location="https://noanlearning.space/profesores/";
+            $("#submit-login").html("Entrar");
+           window.location="https://noanlearning.space/profesores/";
         },2000);
-            $("#submit-login").val("Bienvenido Alumno");
+            $("#submit-login").html("Bienvenido Alumno");
        }else if(login.estado==3){
             setTimeout(function(){
-                $("#submit-login").val("Entrar");
+                $("#submit-login").html("Entrar");
                 window.location="https://noanlearning.space/alumnos/";
             },2000);
             
        }else{
-        $("#submit-login").val("Error De Credenciales");
+        $("#submit-login").css("background","linear-gradient(top, #c43177, #d44a4a)");
+        $("#submit-login").html("Error De Credenciales");
+        setTimeout(function(){
+            $("#submit-login").css("background-color","#4a77d4");
+            $("#submit-login").html("Entrar");
+        },2000)
        }
     });
 });

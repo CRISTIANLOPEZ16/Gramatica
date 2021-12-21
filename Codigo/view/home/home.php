@@ -14,6 +14,7 @@
                 <div class="contenedor">
                     <img src="<?php echo constant('URLIMG');?>logoApiDos.png" class="logotipo">
                     <a href="login/">Iniciar Sesion</a>
+                    <a href="solucionador">Resolver Ejercicio</a>
                 </div>
             </nav>
             <div class="contenedor-imagen">
@@ -63,7 +64,7 @@
                         <div class="row justify-content-center">
                             <article class="col-6 col-lg-3 py-1">
                                 <figure class="persona">
-                                    <img src="<?php echo constant('URLIMG');?>perfil.png" class="img-fluid">
+                                    <img src="<?php echo constant('URLIMG');?>CristianLopez.jpg" class="img-fluid">
                                     <figcaption class="overlay">
                                         <p class="overlay-texto">Cristian Lopez</p>
                                     </figcaption>
@@ -72,7 +73,7 @@
 
                             <article class="col-6 col-lg-3 py-1">
                                 <figure class="persona">
-                                    <img src="<?php echo constant('URLIMG');?>perfil.png" class="img-fluid">
+                                    <img src="<?php echo constant('URLIMG');?>DaniloQuintero.jpg" class="img-fluid">
                                     <figcaption class="overlay">
                                         <p class="overlay-texto">Danilo Quintero</p>
                                     </figcaption>
@@ -81,7 +82,7 @@
 
                             <article class="col-6 col-lg-3 py-1">
                                 <figure class="persona">
-                                    <img src="<?php echo constant('URLIMG');?>perfil.png" class="img-fluid">
+                                    <img src="<?php echo constant('URLIMG');?>JhoanMancilla.jpg" class="img-fluid">
                                     <figcaption class="overlay">
                                         <p class="overlay-texto">Jhoan Mancilla</p>
                                     </figcaption>
@@ -90,9 +91,9 @@
 
                             <article class="col-6 col-lg-3 py-1">
                                 <figure class="persona">
-                                    <img src="<?php echo constant('URLIMG');?>perfil.png" class="img-fluid">
+                                    <img src="<?php echo constant('URLIMG');?>eduado.jpeg" class="img-fluid">
                                     <figcaption class="overlay">
-                                        <p class="overlay-texto">Chowi</p>
+                                        <p class="overlay-texto">Eduardo Pico</p>
                                     </figcaption>
                                 </figure>
                             </article>

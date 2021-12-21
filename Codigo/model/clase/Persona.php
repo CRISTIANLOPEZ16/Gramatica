@@ -1,12 +1,12 @@
 <?php
 class Persona
 {
-	public $id;
-	public $nombre;
-	public $apellido;
-	public $correo;
-	public $clave;
-	public $tipo_persona;
+	public $id="";
+	public $nombre="";
+	public $apellido="";
+	public $correo="";
+	public $clave="";
+	public $tipo_persona="";
 
 
 	public function __construct(){
@@ -27,13 +27,13 @@ class Persona
     }
 
 
-	public function __construct5($id,$nombre,$apellido,$correo,$clave)
+	public function __construct5($nombre,$apellido,$correo,$clave,$tipo_persona)
     { 
         $this->setNombre($nombre);
         $this->setApellido($apellido);
         $this->setCorreo($correo);
         $this->setClave($clave);
-        $this->setId($id);
+        $this->setTipoPersona($tipo_persona);
     }
 
     public function __construct6($id,$nombre,$apellido,$correo,$clave,$tipo_persona)
@@ -43,59 +43,131 @@ class Persona
         $this->setApellido($apellido);
         $this->setCorreo($correo);
         $this->setClave($clave);
-        $this->setTipo_persona($tipo_persona);
+        $this->setTipoPersona($tipo_persona);
     }
-
-	public function setId($id){
-		$this->id = $id;
-	}
-
-	public function getId($id){
-		return $this->$id;
-	}
-
-	public function setNombre($nombre){
-		$this->nombre = $nombre;
-	}
-
-	public function getNombre($nombre){
-		return $this->$nombre;
-	}
-
-	public function setApellido($apellido){
-		$this->apellido = $apellido;
-	}
-
-	public function getApellido($apellido){
-		return $this->$apellido;
-	}
-
-	public function setCorreo($correo){
-		$this->correo = $correo;
-	}
-
-	public function getCorreo($correo){
-		return $this->$correo;
-	}
-
-	public function setClave($clave){
-		$this->clave = $clave;
-	}
-
-	public function getClave($clave){
-		return $this->$clave;
-	}
-
-	public function setTipo_persona($tipo_persona){
-		$this->tipo_persona = $tipo_persona;
-	}
-
-	public function getTipo_persona($tipo_persona){
-		return $this->$tipo_persona;
-	}
 
 	
 
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * @param mixed $nombre
+     *
+     * @return self
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApellido()
+    {
+        return $this->apellido;
+    }
+
+    /**
+     * @param mixed $apellido
+     *
+     * @return self
+     */
+    public function setApellido($apellido)
+    {
+        $this->apellido = $apellido;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+
+    /**
+     * @param mixed $correo
+     *
+     * @return self
+     */
+    public function setCorreo($correo)
+    {
+        $this->correo = $correo;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClave()
+    {
+        return $this->clave;
+    }
+
+    /**
+     * @param mixed $clave
+     *
+     * @return self
+     */
+    public function setClave($clave)
+    {
+        $this->clave = $clave;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoPersona()
+    {
+        return $this->tipo_persona;
+    }
+
+    /**
+     * @param mixed $tipo_persona
+     *
+     * @return self
+     */
+    public function setTipoPersona($tipo_persona)
+    {
+        $this->tipo_persona = $tipo_persona;
+
+        return $this;
+    }
 }
 
 

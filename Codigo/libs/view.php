@@ -19,6 +19,7 @@ class View
 
     public function subValid($sub){
             if(file_exists('view/'.$sub.'.php')){
+
                 return 1;
             }else{
                 return 0;

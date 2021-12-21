@@ -36,11 +36,11 @@ class loginModel extends Model
             }else if($row["tipo_persona"]=="Profesor"){
                 $sqlProfesor="SELECT pe.id,pe.nombre,pe.apellido,p.institucion,p.codigo FROM `persona`pe INNER JOIN profesor p on p.id_profesor=pe.id WHERE pe.id=:id";
                 $statementP=$this->conexion->prepare($sqlProfesor);
-                $statementP->bindParam(":id",$row["id"],PDO::PARAM_STR);
+                $statementP->bindParam(":id",$row["id"],PDO::PARAM_INT);
                 $statementP->execute();
                 $rowP = $statementP->fetch(PDO::FETCH_ASSOC);
                 $tipoUsuario=$row["tipo_persona"];
-                $usuario = new Profesor($rowP["id"],$rowP["nombre"],$rowP["apellido"],$correo,$clave,$tipoUsuario,$rowP["codigo"],$rowP["institucion"]);    
+                $usuario = new Profesor($rowP["id"],$rowP["nombre"],$rowP["apellido"],$correo,$rowP["codigo"],$rowP["institucion"]);    
                 session_start();
                 $_SESSION['profesor']=$usuario;
                 return json_encode(array("estado" => 2));
